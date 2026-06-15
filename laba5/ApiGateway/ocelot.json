@@ -1,0 +1,88 @@
+//Round Robin
+//{
+//  "Routes": [
+//    {
+//      "UpstreamPathTemplate": "/lb",
+//      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+//      "DownstreamPathTemplate": "/A",
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 3001
+//        },
+//        {
+//          "Host": "localhost",
+//          "Port": 3002
+//        },
+//        {
+//          "Host": "localhost",
+//          "Port": 3003
+//        }
+//      ],
+//      "LoadBalancerOptions": {
+//        "Type": "RoundRobin"
+//      }
+//    }
+//  ]
+//}
+
+//Sticky Sessions
+//{
+//  "Routes": [
+//    {
+//      "UpstreamPathTemplate": "/lb",
+//      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+//      "DownstreamPathTemplate": "/A",
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 3001
+//        },
+//        {
+//          "Host": "localhost",
+//          "Port": 3002
+//        },
+//        {
+//          "Host": "localhost",
+//          "Port": 3003
+//        }
+//      ],
+//      "LoadBalancerOptions": {
+//        "Type": "CookieStickySessions",
+//        "Key": "MySessionId",
+//        "Expiry": 300000
+//      }
+//    }
+//  ]
+//}
+
+//Custom Balancer
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/lb",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "DownstreamPathTemplate": "/A",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3001
+        },
+        {
+          "Host": "localhost",
+          "Port": 3002
+        },
+        {
+          "Host": "localhost",
+          "Port": 3003
+        }
+      ],
+      "LoadBalancerOptions": {
+        "Type": "Weighted"
+      }
+    }
+  ]
+}

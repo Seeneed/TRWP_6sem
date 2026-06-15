@@ -1,0 +1,5 @@
+// выполнить docker compose up -d
+
+// если вдруг что, то можно выполнить команду docker compose down
+
+// перейти на http://localhost:8080/swagger/index.html и тестировать через Swagger

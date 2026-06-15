@@ -1,0 +1,21 @@
+$methods = @("GET", "POST", "PUT", "DELETE")
+$results = @{ "X" = 0; "Y" = 0; "Z" = 0 }
+
+$session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+
+Write-Host "Executing requests with Sticky Sessions (waiting...)"
+
+foreach ($method in $methods) {
+    for ($i = 1; $i -le 5; $i++) {
+        $response = Invoke-RestMethod -Uri "http://localhost:5000/lb" -Method $method -WebSession $session -ErrorAction SilentlyContinue
+        if ($response.Nick) {
+            $results[$response.Nick]++
+        }
+    }
+}
+
+Write-Host "`n=== Results Sticky Sessions ==="
+Write-Host "Processed by server X: $($results['X'])"
+Write-Host "Processed by server Y: $($results['Y'])"
+Write-Host "Processed by server Z: $($results['Z'])"
+Read-Host "Tab Enter for exit..."

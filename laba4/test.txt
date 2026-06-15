@@ -1,0 +1,15 @@
+// в 3 разных терминалах запустить серверы
+node TDWA04-01.js X 3001
+node TDWA04-01.js Y 3002
+node TDWA04-01.js Z 3003
+
+// дальше нужно запустить проект в Visual Studio
+
+// затем в окне PowerShell или CMD проверить работоспособность с помощью CURL
+curl -X GET http://localhost:5000/api
+
+curl -X POST http://localhost:5000/api
+
+curl -X PUT http://localhost:5000/api
+
+curl -X DELETE http://localhost:5000/api

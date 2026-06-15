@@ -1,0 +1,5 @@
+// выполнить docker compose up -d
+
+// если вдруг что, то можно выполнить команду docker compose down
+
+// запустить проект в Visual Studio, после чего отроется Swagger для тестирования

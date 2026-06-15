@@ -1,0 +1,30 @@
+@host = http://localhost:5199
+
+### GET all
+GET {{host}}/api/celebrities
+
+### GET by id
+GET {{host}}/api/celebrities/1
+
+### POST (create)
+POST {{host}}/api/celebrities
+Content-Type: application/json
+
+{
+  "fullname": "Tom Hanks",
+  "nationality": "US",
+  "reqPhotoPath": "/photos/hanks.jpg"
+}
+
+### PUT (update)
+PUT {{host}}/api/celebrities/1
+Content-Type: application/json
+
+{
+  "fullname": "Tom Hanks",
+  "nationality": "US",
+  "reqPhotoPath": "/photos/hanks-updated.jpg"
+}
+
+### DELETE
+DELETE {{host}}/api/celebrities/1
